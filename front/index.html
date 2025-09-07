@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>医療文書検索</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>医療文書検索フォーム</h2>
+
+    <!-- 検索フォーム：GETでresults.htmlへ遷移 -->
+    <form action="results.html" method="get" class="card">
+      <label for="q">質問:</label>
+      <input type="text" id="q" name="q" placeholder="例: 6歳 女児 うつ病" required>
+
+      <label for="k">検索件数 (k):</label>
+      <input type="number" id="k" name="k" min="1" max="10" value="4" required>
+
+      <button type="submit">検索</button>
+    </form>
+
+    <h3>ファイルアップロード</h3>
+    <div id="dropZone" class="drop-zone card">
+      ここにファイルをドラッグ＆ドロップ<br>
+      または <button id="pickBtn" type="button" class="ghost">ファイルを選択</button>
+      <input id="fileInput" type="file" multiple hidden>
+    </div>
+    <div id="uploadResult" class="upload-result"></div>
+  </div>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+/* ベース */
+:root {
+  --primary: #0078D4;
+  --primary-dark: #005fa3;
+  --bg: #f5f8fc;
+  --card: #ffffff;
+  --text: #333;
+  --muted: #666;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "Hiragino Sans", Arial, sans-serif;
+  background: var(--bg);
+  margin: 0;
+  padding: 20px;
+  color: var(--text);
+  line-height: 1.6;
+}
+.container { max-width: 900px; margin: 0 auto; }
+h2, h3 { color: var(--primary); margin: 10px 0; }
+a { color: var(--primary); text-decoration: none; }
+a.back { display: inline-block; margin-bottom: 10px; }
+a:hover { text-decoration: underline; }
+
+/* カード/フォーム */
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,.06);
+  margin-bottom: 18px;
+}
+label { font-weight: 600; display: block; margin: 10px 0 6px; }
+input, button {
+  width: 100%; padding: 12px; border-radius: 8px;
+  border: 1px solid #ddd; font-size: 15px;
+}
+input:focus { outline: none; border-color: var(--primary); }
+button {
+  background: var(--primary); color: #fff; border: none;
+  cursor: pointer; margin-top: 10px; font-weight: 600;
+}
+button:hover { background: var(--primary-dark); }
+button.ghost {
+  background: transparent; color: var(--primary);
+  border: 1px solid var(--primary); width: auto; padding: 8px 12px;
+}
+button.ghost:hover { background: #ecf5ff; }
+
+/* ドロップゾーン */
+.drop-zone {
+  text-align: center;
+  border: 2px dashed var(--primary);
+}
+.drop-zone.dragover { background: #ecf5ff; border-color: var(--primary-dark); }
+.upload-result { margin-top: 10px; overflow-wrap: anywhere; }
+
+/* 結果カード */
+#resultsContainer { margin-top: 10px; }
+.result-card {
+  background: var(--card);
+  padding: 16px;
+  border-left: 5px solid var(--primary);
+  border-radius: 10px;
+  margin: 14px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+.result-card .meta { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.result-card .summary { white-space: normal; overflow-wrap: anywhere; }
+
+/* レスポンシブ */
+@media (max-width: 600px) {
+  body { padding: 12px; }
+  .card { padding: 16px; }
+}
